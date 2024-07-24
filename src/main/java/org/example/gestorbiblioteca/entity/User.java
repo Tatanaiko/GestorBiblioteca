@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,4 +23,10 @@ public class User {
 
     @Column(name = "apellido", nullable = false, length = 100)
     private String surname;
+
+    @OneToMany(mappedBy = "user")
+    private List<BookHistory> bookHistories;
+
+
+
 }

@@ -12,6 +12,5 @@ public interface IUserService {
     User updateUser(User user);
     void deleteUserById(Long id);
     void deleteUser(User user);
-
     String msj();
 }

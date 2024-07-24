@@ -16,32 +16,33 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public User getUser(long id) {
-        return null;
+        User user = userRepository.findById(id).orElse(null);
+        return user;
     }
 
     @Override
     public List<User> getAllUsers() {
-        return null;
+        return userRepository.findAll();
     }
 
     @Override
     public User saveUser(User user) {
-        return null;
+        return userRepository.save(user);
     }
 
     @Override
     public User updateUser(User user) {
-        return null;
+        return userRepository.save(user);
     }
 
     @Override
     public void deleteUserById(Long id) {
-
+        userRepository.deleteById(id);
     }
 
     @Override
     public void deleteUser(User user) {
-
+        userRepository.delete(user);
     }
 
     public String msj(){
